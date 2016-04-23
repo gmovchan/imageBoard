@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Image board</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="callTextareaButton">
+      <form id="formFromNewPost" class="" action="index.html" method="post" >
+        <textarea name="name" ></textarea>
+        <br>
+        <div class="textareaButton">
+          Форматирование:
+        </div>
+        <input class="textareaButton" type="file" name="name" value=""
+        accept="image/jpeg, image/gif, image/png">
+        <br>
+        <input class="textareaButton" type="button" name="name" value="Убрать файл"
+         onclick="document.forms[0].elements[1].value=''">
+        <br>
+        <input class="textareaButton" type="button" name="name" value="Отправить">
+      </form>
+      <div id="openCloseButton">
+        Написать
+      </div>
+    </div>
+    <div id="levelingDiv">
+      Посты
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

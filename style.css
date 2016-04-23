@@ -1,0 +1,39 @@
+.callTextareaButton {
+  border: 1px solid green;
+  background-color: #e6e6e6;
+  position: fixed;
+  top: 0px;
+  width: 600px;
+  left: 50%;
+  margin-left: -301px;
+  z-index: 9999;
+}
+
+#levelingDiv {
+  border: 1px solid green;
+  background-color: #e6e6e6;
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+  height: 2000px;
+}
+
+textarea {
+  width: 574px;
+  height: 200px;
+  margin: 10px;
+  max-width: 574px;
+}
+
+#openCloseButton {
+  cursor: pointer;
+  text-align: center;
+}
+
+#openCloseButton:hover {
+  background-color: #cccccc;
+}
+
+.textareaButton {
+  margin: 0px 0px 10px 10px;
+}

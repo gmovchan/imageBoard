@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	#formText {
+		padding: 10px;
+	}
+	#comment {
+		width: 300px;
+		height: 200px;
+
+	}
+	#submitComment {
+		margin: 10px;
+	}
+
+	.post {
+		width: 300px;
+		border: 1px solid green;
+		margin: 5px;
+		padding: 5px;
+		text-align: left;
+		word-wrap: break-word;
+		position: relative;
+	}
+	.remove-button {
+	    position: absolute;
+	    top: 0;
+	    font-size: 110%;
+	    color: darkred;
+	    right: 10px;
+	    width: 24px;
+	    height: 24px;
+	    border: none;
+	    background: transparent;
+	    display: block;
+	    word-wrap: normal;
+	  }
+	  .remove-button:hover {
+	  	color: red;
+	  }
+	  #name {
+	  	width: 300px;
+	  	margin: 5px;
+	  }
+</style>
+<body>
+	<div id="postArea" align="center" width="400px">
+		<form id="formText">
+			<input type="text" id="name" name="name" placeholder="Введите имя..."></input>
+			<br>
+			<textarea id="comment" name="comment" placeholder="Введите сообщение..."></textarea>
+			<br>
+			<input type="button" id="submitComment" value="Submit"></input>
+			
+		</form>
+	</div>
+</body>
+<script type="text/javascript">
+	var submitButton = document.getElementById('submitComment');
+	var postArea = document.getElementById('postArea');
+	var id = 0;
+
+	document.onclick = function(e) {
+		if (e.target == submitComment) newPost(e);
+		if (e.target.className == "remove-button") deletePost(e);
+	}
+
+	function newPost(e) {
+		var textPost = e.target.form.comment.value;
+		var name = e.target.form.name.value;
+		id = id + 1;
+		if (!textPost) {
+			return false;
+		}
+		createPost(textPost, name, id);
+		e.target.form.comment.value = "";
+		e.target.form.name.value = "";
+	}
+
+	function createPost(text, name, id) {
+		var div = document.createElement("div");
+		var deleteButton = document.createElement("button")
+		div.className = "post";
+		deleteButton.className = "remove-button";
+		deleteButton.innerHTML = "[x]";
+		div.innerHTML = "Id: " + id + "<br>" + "Имя: " + name + "<br>" + text;
+		postArea.appendChild(div);
+		div.appendChild(deleteButton);
+	}
+
+	function deletePost(e) {
+		var post = e.target.parentNode;
+		post.remove();
+
+	}
+</script>
+</html>
